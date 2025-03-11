@@ -2,8 +2,8 @@ import React from "react";
 
 function GallerySection() {
   const galleryItems = [
-    { id: 1, name: "Event 1", form: "Form A" },
-    { id: 2, name: "Event 2", form: "Form B" },
+    { id: 1, name: "Ranan Parmar", form: "Mumbai" },
+    { id: 2, name: "Ranan Parmar", form: "Mumbai" },
     
   ];
 
@@ -27,7 +27,7 @@ function GallerySection() {
         {galleryItems.map((item) => (
           <div key={item.id} className="gallery-item">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d9be42a552dda138aeb280e7bd2c8e503de22381c2fbc4605d5e0aea784126c3"
+              src="istock.jpg"
               className="gallery-image"
               alt={item.name}
             />

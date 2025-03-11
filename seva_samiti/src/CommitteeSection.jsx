@@ -6,21 +6,18 @@ function CommitteeSection() {
   const members = [
     {
       image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/ead0bef07719d7d746e37f292a068b01d7855b1a6569c7e415fad38b99b83e02",
-      name: "NAME-1",
-      form: "FORM-1",
+        "download.jpg",
+      name: "Ranan Parmar", form: "Mumbai"
     },
     {
       image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/ead0bef07719d7d746e37f292a068b01d7855b1a6569c7e415fad38b99b83e02",
-      name: "NAME-2",
-      form: "FORM-2",
+"istock.jpg",
+     name: "Ranan Parmar", form: "Mumbai"
     },
     {
       image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/7124aa401299abf7de413152832459aaf68ba13235d8c901e6b19a2f9e9b5f9b",
-      name: "NAME-3",
-      form: "FORM-3",
+"download.jpg",      
+    name: "Ranan Parmar", form: "Mumbai"
     },
   ];
 
