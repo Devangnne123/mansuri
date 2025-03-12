@@ -58,7 +58,7 @@ const NewsSections = () => {
           flex-direction: column;
           align-items: center;
           padding: 40px 16px;
-          background-color: #f9fafc;
+          
           width:100%;
         }
 
@@ -86,6 +86,7 @@ const NewsSections = () => {
         @media (max-width: 768px) {
           .news-section {
             padding: 24px 12px;
+            width:90%;
           }
 
           .news-title {

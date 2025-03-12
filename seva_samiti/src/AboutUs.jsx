@@ -43,7 +43,7 @@ function AboutUs() {
           padding: 40px;
           box-sizing: border-box;
           font-family: "Poppins", sans-serif;
-          background-color: #fafafa;
+          
         }
 
         /* Flexbox Container */

@@ -1,8 +1,18 @@
 import React from "react";
+import { motion, useInView } from "framer-motion";
 
 function ContactSection() {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <div className="main123">
+    <motion.div
+      ref={ref}
+      className="main123"
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1 } : {}}
+      transition={{ duration: 1 }}
+    >
       <section className="contact-section1">
         <div className="contact-content1">
           {/* Contact Info */}
@@ -17,12 +27,13 @@ function ContactSection() {
                 </span>
                 <span className="red-text">question</span>
                 <span className="light-text">
-                  , need assistance, or want to collaborate with us, feel free to
-                  reach out.
+                  , need assistance, or want to collaborate with us, feel free
+                  to reach out.
                 </span>
                 <span className="gold-text"> Our team is here</span>
                 <span className="light-text">
-                  {" "}to help and ensure a smooth communication process.
+                  {" "}
+                  to help and ensure a smooth communication process.
                 </span>
               </p>
             </div>
@@ -76,15 +87,16 @@ function ContactSection() {
       <style jsx>{`
         /* Contact Section */
         .main123 {
-          width:100%;
-          margin: 20px;
+          width: 100%;
+          margin: 20px auto;
           padding: 20px;
+          max-width: 1200px; /* ✅ Fixed max-width to 1200px */
+          box-sizing: border-box;
         }
 
         .contact-section1 {
           display: flex;
-          justify-content: space-between;
-
+          justify-content: center; /* ✅ Fixed spelling mistake */
           align-items: center;
           padding: 20px;
         }
@@ -93,17 +105,20 @@ function ContactSection() {
         .contact-content1 {
           display: flex;
           align-items: center;
+          justify-content: space-between; /* ✅ Centered and spaced correctly */
           gap: 40px;
-          flex-wrap: wrap;
-          width: 100%;
-          margin-top: 0px;
-          margin-bottom: 20px;
+
+          width: 90%;
+          margin: 0;
         }
 
         .info-column {
           flex: 1;
           min-width: 320px;
           text-align: center;
+          display: flex; /* ✅ Fixed spelling and alignment */
+          justify-content: center;
+          align-items: center;
         }
 
         .contact-title {
@@ -123,9 +138,11 @@ function ContactSection() {
           color: #555;
           line-height: 1.6;
           max-width: 400px;
-          margin: 0 auto;
           text-align: justify;
-          font-family: "Poppins", sans-serif;
+          font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+          font-size: 14px;
+          color: rgba(0, 0, 0, 1);
+          font-weight: 600;
         }
 
         .light-text {
@@ -138,12 +155,12 @@ function ContactSection() {
         }
 
         .red-text {
-          color: #ff4d0b;
+           color: #ff8800;
           font-weight: 600;
         }
 
         .gold-text {
-          color: #c08600;
+          color: #ff8800;
           font-weight: 600;
         }
 
@@ -166,6 +183,7 @@ function ContactSection() {
           gap: 16px;
           width: 100%;
           max-width: 350px;
+          box-sizing: border-box;
         }
 
         /* Form Inputs */
@@ -195,19 +213,19 @@ function ContactSection() {
         /* Send Button */
         .send-button {
           padding: 14px;
-          background-color: #ff8800;
-          color: #fff;
+          background-color: rgba(255, 136, 0, 1);
+          color:black;
           font-size: 16px;
           font-weight: 600;
           border: none;
-          border-radius: 8px;
+          border-radius: 100px;
           cursor: pointer;
           transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         .send-button:hover {
-          background-color: #ff6600;
-          transform: scale(1.05);
+           background-color: rgba(255, 136, 0, 1);
+          transform: scale(1);
         }
 
         /* Responsive Styling */
@@ -227,8 +245,13 @@ function ContactSection() {
 
           .contact-description {
             font-size: 16px;
-            max-width: 90%;
+            max-width: 100%;
             text-align: justify;
+          }
+          .contact-info1 {
+            diplay: flex;
+            justify-contant: center;
+            align-items: center;
           }
 
           .contact-form {
@@ -246,7 +269,7 @@ function ContactSection() {
           }
         }
       `}</style>
-    </div>
+    </motion.div>
   );
 }
 

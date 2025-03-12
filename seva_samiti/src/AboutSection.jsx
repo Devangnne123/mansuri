@@ -1,8 +1,12 @@
 import React from "react";
+import { motion, useInView } from 'framer-motion';
 
 function AboutSection() {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section className="about-section">
+    <motion.section ref={ref} className="about-section" initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 1 }}>
       <h2 className="about-title">Events & Function -</h2>
       <p className="about-text">
         <span className="regular-text"> proudly </span>
@@ -84,7 +88,7 @@ function AboutSection() {
           color: rgba(137, 129, 39, 1);
         }
       `}</style>
-    </section>
+    </motion.section>
   );
 }
 

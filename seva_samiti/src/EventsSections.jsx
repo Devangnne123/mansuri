@@ -71,7 +71,7 @@ const EventsSections = () => {
           flex-direction: column;
           align-items: center;
           padding: 40px 16px;
-          background-color: #f9fafc;
+        
           width:100%;
         }
 
@@ -99,6 +99,7 @@ const EventsSections = () => {
         @media (max-width: 768px) {
           .events-sections {
             padding: 24px 12px;
+             width:90%;
           }
 
           .events-titles {

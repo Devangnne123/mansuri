@@ -1,5 +1,6 @@
 import React from "react";
 import NewsItem from "./NewsItem";
+import { motion, useInView } from 'framer-motion';
 
 function NewsSection() {
   const newsItems = [
@@ -8,8 +9,11 @@ function NewsSection() {
     { date: "15 Mar 2025", title: "General News" },
   ];
 
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section className="news-container">
+    <motion.section ref={ref} className="news-container" initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 1 }}>
       <div className="news-header">
         <div className="news-title-container">
           <img
@@ -17,7 +21,7 @@ function NewsSection() {
             className="news-icon"
             alt="News Icon"
           />
-          <h2 className="news-title">NEWS</h2>
+          <motion.h2 className="news-title" initial={{ scale: 0.8 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>NEWS</motion.h2>
         </div>
         <button className="all-news-button">ALL NEWS</button>
       </div>
@@ -176,7 +180,7 @@ function NewsSection() {
           margin-top: 8px;
         }
       `}</style>
-    </section>
+    </motion.section>
   );
 }
 

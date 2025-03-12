@@ -1,8 +1,12 @@
 import React from "react";
+import { motion, useInView } from 'framer-motion';
 
 function Footer() {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <footer className="footer">
+    <motion.footer ref={ref} className="footer" initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 1 }}>
       <div className="footer-content">
         <div className="contact-info">
           <div className="office-section">
@@ -671,7 +675,7 @@ function Footer() {
           flex-shrink: 0;
         }
       `}</style>
-    </footer>
+    </motion.footer>
   );
 }
 

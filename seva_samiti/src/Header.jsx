@@ -1,22 +1,43 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion, useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  { name: "Committee", href: "/committee" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "News", href: "/news" },
-  { name: "Events", href: "/events" },
-  { name: "Contact Us", href: "/contact" },
-  { name: "Achievement", href: "/achievements" },
+  { name: "Home", to: "/" },
+  { name: "About Us", to: "/about" },
+  { name: "Committee", to: "/committee" },
+  { name: "Gallery", to: "/gallery" },
+  { name: "News", to: "/news" },
+  { name: "Events", to: "/events" },
+  { name: "Contact Us", to: "/contact" },
+  { name: "Achievement", to: "/achievements" },
 ];
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isFixed, setIsFixed] = useState(false);
+
+  const handleNavClick = () => {
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="header-container">
+    <motion.header className={`header-container ${isFixed ? "fixed" : ""}`}>
       <div className="header-content">
         {/* Logo Section */}
         <div className="logo-section">
@@ -42,9 +63,9 @@ function Header() {
         <nav className={`navigation ${isOpen ? "active" : ""}`}>
           {navLinks.map((link, index) => (
             <div className="nav-item" key={index}>
-              <a href={link.href} className="nav-link">
+              <Link to={link.to} className="nav-link">
                 {link.name}
-              </a>
+              </Link>
               <div className="nav-indicator" />
             </div>
           ))}
@@ -65,6 +86,13 @@ function Header() {
           overflow: hidden;
           padding: 0 20px;
           box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+          transition: position 0.5s ease;
+        }
+
+        .fixed {
+          position: fixed;
+          top: 0;
+          z-index: 1000;
         }
 
         .header-content {
@@ -93,6 +121,7 @@ function Header() {
           font-size: 10px;
           font-weight: bold;
           color: #333;
+          
           white-space: nowrap;
         }
 
@@ -104,7 +133,7 @@ function Header() {
         .navigation {
           display: flex;
           gap: 20px;
-          transition: all 0.4s ease;
+          transition: all 0.8s ease;
         }
 
         .nav-item {
@@ -144,6 +173,7 @@ function Header() {
           display: none;
           flex-direction: column;
           cursor: pointer;
+          right:40px;
           gap: 5px;
         }
 
@@ -172,24 +202,25 @@ function Header() {
         @media (max-width: 980px) {
           .hamburger {
             display: flex;
-            flex-direction:column;
-            z-index:1000;
-            position:absolute;
-            right:10px;
-            margin:0px;
+            flex-direction: column;
+            z-index: 1000;
+            position: fixed;
+            right: 50px;
+            
+            margin: 0px;
           }
           
-
           .navigation {
-            position: absolute;
-            top: 60px;
+            position: fixed;
+            top: 0;
             left: 0;
             background-color: white;
             width: 100%;
+            height: 100vh;
             flex-direction: column;
             gap: 0;
-            padding: 10px 0;
-            transform: translateY(-200%);
+            padding-top: 80px;
+            transform: translateY(-100%);
             opacity: 0;
             transition: transform 0.4s ease, opacity 0.4s ease;
             z-index: 99;
@@ -199,8 +230,8 @@ function Header() {
           .navigation.active {
             transform: translateY(0);
             opacity: 1;
-            height:100vh;
-            position:fixed;
+            height: 100vh;
+            position: fixed;
           }
 
           .nav-item {
@@ -224,8 +255,17 @@ function Header() {
           width: 100%;
           margin-top: 5px;
         }
+          @media (max-width: 780px) {
+          .hamburger {
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+            position: fixed;
+            right: 20px;
+            margin: 0px;
+          }
       `}</style>
-    </header>
+    </motion.header>
   );
 }
 

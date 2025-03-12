@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from 'framer-motion';
 
 function GallerySection() {
   const galleryItems = [
@@ -8,19 +9,19 @@ function GallerySection() {
   ];
 
   return (
-    <section className="gallery-container">
+    <motion.section className="gallery-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
       {/* Header */}
-      <div className="gallery-header">
+      <motion.div className="gallery-header" initial={{ y: -50 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
         <div className="gallery-title-container">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/a8ff8937ebf7e988d78c4b86df0a54b7f702af43c9380f33e5701cf9c7f923fd"
             className="gallery-icon"
             alt="Gallery Icon"
           />
-          <h2 className="gallery-title">GALLERY</h2>
+          <motion.h2 className="gallery-title" initial={{ scale: 0.8 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>GALLERY</motion.h2>
         </div>
         <button className="all-gallery-button">ALL GALLERY</button>
-      </div>
+      </motion.div>
 
       {/* Gallery Content */}
       <div className="gallery-content">
@@ -173,7 +174,7 @@ function GallerySection() {
           font-weight: 500;
         }
       `}</style>
-    </section>
+    </motion.section>
   );
 }
 

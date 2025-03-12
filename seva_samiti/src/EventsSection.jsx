@@ -2,6 +2,7 @@ import React from "react";
 import EventCard from "./EventCard";
 import AboutSection from "./AboutSection";
 import "./EventsSection.css";
+import { motion, useInView } from 'framer-motion';
 
 function EventsSection() {
   const events = [
@@ -28,8 +29,11 @@ function EventsSection() {
     },
   ];
 
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section className="events-section">
+    <motion.section ref={ref} className="events-section" initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 1 }}>
       <div className="events-content">
         <div className="about-column1">
           <AboutSection />
@@ -37,17 +41,17 @@ function EventsSection() {
         <div className="events-column">
           <div className="events-container">
             {/* Header */}
-            <div className="events-header">
+            <motion.div className="events-header" initial={{ y: -50 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
               <div className="events-title-container">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/ded296044576e59c6796f9bb03058e990880a904f5848a39395bee22eb5c04c7?placeholderIfAbsent=true&apiKey=246328c9c48c45dfa2d17d04ef601627"
                   className="events-icon"
                   alt="Events Icon"
                 />
-                <h2 className="events-title">EVENTS</h2>
+                <motion.h2 className="events-title" initial={{ scale: 0.8 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }}>EVENTS</motion.h2>
               </div>
               <button className="all-events-button">ALL EVENTS</button>
-            </div>
+            </motion.div>
 
             {/* Event + Date Container */}
             <div className="event-list">
@@ -82,7 +86,7 @@ function EventsSection() {
 
       {/* Styles */}
       
-    </section>
+    </motion.section>
   );
 }
 
