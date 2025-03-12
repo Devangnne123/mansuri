@@ -49,7 +49,7 @@ function GallerySection() {
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
           display: flex;
           flex-direction: column;
-          margin: 40px 20px;
+          margin: 40px 10px;
           padding: 30px;
           align-items: center;
           font-family: Inter, sans-serif;

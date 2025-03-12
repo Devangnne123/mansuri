@@ -59,6 +59,7 @@ const NewsSections = () => {
           align-items: center;
           padding: 40px 16px;
           background-color: #f9fafc;
+          width:100%;
         }
 
         .news-title {

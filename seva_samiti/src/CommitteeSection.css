@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 0rem;
+    max-width: 1268px;
     width: 100%;
   }
   
@@ -89,7 +90,8 @@
     .committee-title {
       padding: 0.2rem;
       font-size: 1rem;
-     
+      
+      align-items: center;
       justify-content: center;
     }
   

@@ -14,11 +14,7 @@ function HeroSection() {
         
             <button className="login-button">LOGIN</button>
             <button className="language-button">GUJARATI</button>
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5022907eec3a78a5bca964184b7ef6f41c38528adb51094b308a9f4942e95799?placeholderIfAbsent=true&apiKey=246328c9c48c45dfa2d17d04ef601627"
-              className="language-icon"
-              alt="Language Icon"
-            />
+            
           </div>
           </div>
             <h1 className="hero-title">
@@ -42,11 +38,7 @@ function HeroSection() {
         <div className="login-section">
             <button className="login-button">LOGIN</button>
             <button className="language-button">GUJARATI</button>
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5022907eec3a78a5bca964184b7ef6f41c38528adb51094b308a9f4942e95799?placeholderIfAbsent=true&apiKey=246328c9c48c45dfa2d17d04ef601627"
-              className="language-icon"
-              alt="Language Icon"
-            />
+            
           </div>
           <NewsSection />
         </div>

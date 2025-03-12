@@ -52,10 +52,15 @@ function App() {
             flex-direction: column;
             overflow: hidden;
             align-items: center;
-            min-height: 100vh;
+            
+           
           }
           .content {
+          display:flex;
+          flex-direction:column;
             flex: 1;
+            justify-content:center;
+            align-items: center;
             width: 100%;
           }
         `}</style>

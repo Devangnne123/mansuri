@@ -16,7 +16,8 @@
   .hero-content {
     gap: 20px;
     display: flex;
-    justify-contant:center;
+    justify-content: center;
+    
   }
   @media (max-width: 991px) {
     .hero-content {
@@ -41,7 +42,8 @@
     display: flex;
   
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
+    
     line-height: normal;
     width: 100%;
     margin-left: 0px;
@@ -49,6 +51,7 @@
   @media (max-width: 991px) {
     .hero-column {
       width: 100%;
+      justify-content: center;
     }
   }
   .hero-text-container {
@@ -68,6 +71,7 @@
     color: rgba(0, 0, 0, 1);
     font-weight: 800;
     width: 100%;
+    
   }
   @media (max-width: 991px) {
     .hero-text-container {
@@ -118,9 +122,11 @@
   .news-column {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    justify-content: center;
     line-height: normal;
-    width: 33%;
+    width: 35%;
+    
     margin-left: 40px;
     margin-right: 40px;
   }
@@ -130,6 +136,7 @@
       align-items: center;
       justify-content: center;
       margin:0px;
+      margin-top: 40px;
       
       
       
@@ -137,7 +144,7 @@
    
   }
   .login-section {
-    align-self: start;
+    align-items: center;
    
     display: flex;
     gap: 30px;

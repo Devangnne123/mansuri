@@ -31,11 +31,9 @@ function Footer() {
                       (Gujarat) -380055
                       <br />
                     </address>
+                    
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="contact-details">
+                  <div className="contact-details">
               <div className="phone-row">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/de430ff786c213ac3a4617014585d6fb2572ad7a859f11e676b21b0305b35a77?placeholderIfAbsent=true&apiKey=246328c9c48c45dfa2d17d04ef601627"
@@ -56,6 +54,10 @@ function Footer() {
                 </p>
               </div>
             </div>
+                </div>
+              </div>
+            </div>
+            
           </div>
           <nav className="main-menu">
             <h3 className="menu-title">Main Menu</h3>
@@ -188,7 +190,7 @@ function Footer() {
       <style jsx>{`
         .footer {
           background-color: rgba(255, 163, 129, 0.65);
-          align-self: stretch;
+          
           display: flex;
           margin-top: 20px;
           width: 100%;
@@ -196,7 +198,8 @@ function Footer() {
           padding-bottom: 15px;
           flex-direction: column;
           overflow: hidden;
-          align-items: stretch;
+          align-items: center;
+           max-width: 1340px;
         }
         @media (max-width: 991px) {
           .footer {
@@ -218,6 +221,7 @@ function Footer() {
         @media (max-width: 991px) {
           .footer-content {
             max-width: 100%;
+           
           }
         }
         .contact-info {
@@ -236,7 +240,7 @@ function Footer() {
             flex-direction: column;
             jusity-content:start;
             align-items:start;
-            margin-left :50px;
+            
             row-gap:50px
           }
         }
@@ -260,6 +264,7 @@ function Footer() {
             flex-direction: column;
             align-items: stretch;
             gap: 0px;
+            width:100%;
           }
         }
         .logo-column {
@@ -625,12 +630,11 @@ function Footer() {
           }
         }
         .copyright-section {
-          align-items: center;
-          justyfy-content: center;
-          display: flex;
+         text-align:center;
+          
           margin-top: 12px;
           margin-right: 24px;
-          width: 929px;
+          
          width: 100%;
           
           gap: 20px;

@@ -30,7 +30,7 @@ function AboutSection() {
           color: rgba(0, 0, 0, 1);
           width:450px;
           font-size: 14px;
-          margin:30px;
+          margin-top:30px;
           font-family:
             Inter,
             -apple-system,
